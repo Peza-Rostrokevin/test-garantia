@@ -5,7 +5,6 @@ const cors = require('cors');
 // const jwt = require('jsonwebtoken');
 const RutasUsuario = require('./routes/usuario.route');
 const RutasPerfil = require('./routes/perfil.route');
-// require('dotenv').config();
 var corsOptions = function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -16,14 +15,6 @@ var corsOptions = function(req, res, next){
 
 var app = express();
 app.use(corsOptions)
-/* app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
-  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-  next();
-});
- */
 app.use(bodyparser.json());
 
 app.use('/usuario', RutasUsuario)

@@ -28,9 +28,10 @@ export class UsuarioComponent implements OnInit {
     this.usuarios$ = this.usuarioServ.getUsuarios()
   }
 
-  eliminarP(id:number): void {
-    this.perfilServ.eliminarPerfil(id).subscribe(data => {
-      window.alert('¡Perfil eliminado con éxito!')
+  eliminarU(id:number): void {
+    this.usuarioServ.eliminarUsuario(id).subscribe(data => {
+      window.alert('¡Usuario eliminado con éxito!')
+      this.getUsers()
     })
   }
 

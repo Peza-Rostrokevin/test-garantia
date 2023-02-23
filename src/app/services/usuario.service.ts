@@ -29,4 +29,8 @@ export class UsuarioService {
   generarUsuario (usuario: Usuario) {
     return this.http.post('http://localhost:3000/usuario/crear', usuario)
   }
+
+  eliminarUsuario (id: number) {
+    return this.http.put('http://localhost:3000/usuario/eliminar/', { id: id })
+  }
 }
